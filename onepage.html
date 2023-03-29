@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+  <script type="text/javascript" src="onepagescroll.js"></script>
+  <link href='onepage-scroll.css' rel='stylesheet' type='text/css'>
+  <style>
+/*
+    html {
+      height: 100%;
+    }
+
+    body {
+      background: #E2E4E7;
+      padding: 0;
+      text-align: center;
+      font-family: 'open sans';
+      position: relative;
+      margin: 0;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+ */  
+    .wrapper {
+    	height: 100% !important;
+    	height: 100%;
+    	margin: 0 auto; 
+    	overflow: hidden;
+    }
+
+ /*
+    .main {
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+  
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      display: block;
+      padding: 7px;
+      width: 100%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.25);
+      font-weight: bold;
+      font-size: 13px;
+      color: #000;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      -o-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out;
+    }
+
+    .back:hover {
+      color: black;
+      background: rgba(255, 255, 255, 0.5);
+    }
+    
+
+    .main section .page_container {
+      position: relative;
+      top: 25%;
+      margin: 0 auto 0;
+      max-width: 950px;
+      z-index: 3;
+    }
+
+ */
+    .main section  {
+      overflow: hidden;
+    }
+    
+
+   
+    .main section.page1 {
+      /* background-color:#FFF8E7; */
+	  background-color:#212529;
+      background-image: url('palm-tree8.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;  
+      background-size: contain;
+      background-position: center top;
+    }
+
+    .main section.page2 {
+      background:rgb(0,0,0);
+  background-image: url('earth3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: contain;
+background-position: center top;
+
+    }
+   
+    .main section.page3 {
+      background:rgb(230, 317, 300);
+
+    }
+   
+    
+   
+	</style>
+</head>
+<body>
+    
+    <div class="wrapper">	
+
+        <div class="main">
+
+            <section class="page1">
+                <div class="page_container">
+                    <!-- <h1>Help Us Get To The Moon</h1> -->
+                </div>
+            </section>
+
+
+               
+            <section class="page2">
+                <div class="page_container">
+                    <!-- <h1>Ready-to-use plugin</h1> -->
+                </div>
+            </section>
+
+            <section class="page3">
+               
+                    <h1>Ready-to-use Page4</h1>
+              
+            </section>
+
+            <section>
+                <div class="page_container">
+                    <h1>No Class</h1>
+                </div>
+            </section>
+               
+            <section class="page4">
+                <div class="page_container">
+                    <h1>Pretty Neat Eh?</h1>
+                </div>
+            </section>     
+        </div>
+
+        <a href="https://github.com/peachananr/purejs-onepage-scroll"><img style="position: absolute; top: 0; right: 0; border: 0;" src="forkme_right_darkblue_121621.png" alt="Donate with Crypto"></a>
+
+    </div>
+
+<script>
+    onePageScroll(".main", {
+        sectionContainer: "section",
+        loop: false,
+        responsiveFallback: false
+    });
+	
+</script>
+
+</body>
+</html>
