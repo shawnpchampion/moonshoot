@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Full Width Pics - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+
+
+  <script type="text/javascript" src="onepagescroll.js"></script>
+ 
+  <link href='onepage-scroll.css' rel='stylesheet' type='text/css'>
+  <style>
+/*
+    html {
+      height: 100%;
+    }
+
+    body {
+      background: #E2E4E7;
+      padding: 0;
+      text-align: center;
+      font-family: 'open sans';
+      position: relative;
+      margin: 0;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+ */  
+    .wrapper {
+    	height: 100% !important;
+    	height: 100%;
+    	margin: 0 auto; 
+    	overflow: hidden;
+    }
+
+ /*
+    .main {
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+  
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      display: block;
+      padding: 7px;
+      width: 100%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.25);
+      font-weight: bold;
+      font-size: 13px;
+      color: #000;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      -o-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out;
+    }
+
+    .back:hover {
+      color: black;
+      background: rgba(255, 255, 255, 0.5);
+    }
+    
+
+    .main section .page_container {
+      position: relative;
+      top: 25%;
+      margin: 0 auto 0;
+      max-width: 950px;
+      z-index: 3;
+    }
+
+ */
+    .main section  {
+      overflow: hidden;
+    }
+    
+
+   
+    .main section.page1 {
+      background-color:#FFF8E7;
+  background-image: url('palm-tree5.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: contain;
+background-position: center top;
+
+    }
+
+
+    .main section.page2 {
+      background:rgb(0,0,0);
+  background-image: url('earth3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: contain;
+background-position: center;
+color:#FFF8E7;
+font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
+    }
+   
+    .main section.page3 {
+      background:rgb(230, 317, 300);
+    }
+
+  .page1 {
+  background-image: url('palm-tree8.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  
+
+    }
+   
+ 
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+/* rtl:begin:ignore */
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+/* rtl:end:ignore */
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+/* rtl:begin:remove */
+.featurette-heading {
+  letter-spacing: -.05rem;
+}
+
+/* rtl:end:remove */
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+   
+   
+	</style>
+
+
+
+    </head>
+    <body>
+        <!-- Responsive navbar -->
+        <nav class="navbar navbar-dark bg-dark"  style="box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5)">
+            <div class="container">
+                <a class="navbar-brand" href="#!" >MoonShoot</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+<!--                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li> -->
+                        <li class="nav-item" onclick="home()" style="cursor: pointer" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><span class="nav-link active">Home</span></li>
+						
+						<li class="nav-item" onclick="about()" style="cursor: pointer" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><span class="nav-link active">About</span></li>
+                        <li class="nav-item" onclick="contact()" style="cursor: pointer" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><span class="nav-link active">Contact</span></li>
+                    </ul>
+                </div>
+            </div>
+        </nav> 
+
+
+
+
+    <div class="wrapper">	
+
+        <div class="main">
+
+
+        <!-- Content section-->
+        <section class="py-5 bg-dark" style="box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); padding-top: 0rem !important">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                   <div class="col-11">
+<!--                        <h2 style="text-align: center; color:#FFF8E7">Help Us Get To The Moon</h2> -->
+                        <div class="page1" style="height: 20rem">
+                        </div>                    
+                   </div>
+
+              
+                   
+
+
+<!--                <div class="col-lg-3">
+                        <h2>Help Us Get To The Moon.</h2>
+                        <p class="lead">You're here to help a couple of guys get to outer space.</p>
+                        <p class="mb-0">We're here to <b>take that ride!</b></p>
+                    </div>
+                    <div class="col-lg-3">
+                        <h2>Help Us Get To The Moon.</h2>
+                        <p class="lead">You're here to help a couple of guys get to outer space.</p>
+                        <p class="mb-0">We're here to <b>take that ride!</b></p>
+                    </div>
+-->
+                </div>
+            </div>
+
+        </section>
+
+            <section class="page2">
+ 
+                <div class="container my-5">
+                    <div class="row justify-content-center">
+                        <div class="col-11">
+                            <p class="lead">You're here to help a couple of guys get to outer space.</p>
+						
+
+
+
+                            <p class="mb-0">We're here to <b><span style="color:#0d6efd">take that ride!</span></b></p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            
+
+        <!-- Content section-->
+        <section class="py-5 bg-dark" style="padding-top: 0rem !important; box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5)" >
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <h2 style="text-align: center; color:#FFF8E7; font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace">The Astronauts</h2>
+<!--                        <p style="text-align: center; color:#FFF8E7;"><span class="lead">These guys...of course!</span></p> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+</div>
+
+</div>
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+       
+<script>
+    onePageScroll(".main", {
+        sectionContainer: "section",
+        loop: false,
+        responsiveFallback: false
+    });
+	
+	function about() {
+  moveTo(".main", 3)
+ 
+};
+	function contact() {
+  moveTo(".main", 2)
+};
+	function home() {
+  moveTo(".main", 1)
+};
+	
+</script>
+
+    </body>
+</html>
