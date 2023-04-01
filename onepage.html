@@ -4,7 +4,12 @@
   <script type="text/javascript" src="onepagescroll.js"></script>
   <link href='onepage-scroll.css' rel='stylesheet' type='text/css'>
   <style>
-  
+	  
+    body {
+        margin: 0;
+        font-family: var(--bs-body-font-family);
+        color: white; 
+    }
     .wrapper {
     	height: 100% !important;
     	height: 100%;
@@ -69,6 +74,25 @@
   margin-left: .75rem;
 }
 /* rtl:end:ignore */
+
+   h2{
+    font-family: var(--bs-body-font-family);
+    font-weight: 500 !important;
+    line-height: 1.2;
+	    padding-left: 3.5rem !important;
+		padding-right: 1.5rem !important;
+    margin-right: auto;
+	 /* margin-left: auto; */
+	font-size: calc(1.325rem + 0.9vw);
+    width: 100%;
+	margin-block-start: 0.1em;
+    margin-block-end: 0.1em;
+	}
+   
+   :root {
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  }	  
 	  
   </style>
 
