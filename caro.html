@@ -222,7 +222,7 @@
     border-radius: 0.35rem!important;
 	}
 	
-	    svg {
+	    .svg1 {
 /*
   position: fixed;
   top: 50%;
@@ -239,9 +239,17 @@
 }
 
 @keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
+    0% { transform: translateX(0%); }
+  5% { transform: translateX(0%) rotate(0deg) scale(1); } 
+  20% { transform: translateX(0%) rotate(270deg) scale(1); }
+  40% { transform: translateY(-50%) rotate(270deg) scale(1); }
+  50% { transform: translateY(-30%) rotate(270deg) scale(1); }
+  60% { transform: translateY(-50%) rotate(270deg) scale(1); }
+  70% { transform: translateY(-40%) rotate(270deg) scale(1); }
+  90% { transform: translateY(-100%) rotate(270deg) scale(1); }
+  95% { transform: translateY(-100%) rotate(270deg) scale(1); }
+  100% { transform: translateY(-100%) rotate(270deg); }
+
 }	
     
     </style>
@@ -550,7 +558,7 @@
 	
 	<a class="scroll-to-top" href="#page-top">
 						
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="63px" height="60px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 119.000000 248.000000">
+<svg class="svg1" xmlns="http://www.w3.org/2000/svg" version="1.1" width="63px" height="60px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 119.000000 248.000000">
 <g><path style="opacity:1" fill="#746f6c" d="M 108.5,6.5 C 112.283,10.3998 114.116,15.0664 114,20.5C 109.819,23.2172 108.652,26.8839 110.5,31.5C 109.265,31.7214 108.265,32.3881 107.5,33.5C 107.167,32.8333 106.833,32.1667 106.5,31.5C 107.762,28.978 108.429,26.3113 108.5,23.5C 109.172,22.7326 110.005,22.0659 111,21.5C 111.749,20.365 111.583,19.365 110.5,18.5C 107.289,20.6004 104.289,22.9337 101.5,25.5C 101.5,24.8333 101.167,24.5 100.5,24.5C 103.669,21.8307 106.669,18.9973 109.5,16C 107.196,11.8844 104.529,8.05112 101.5,4.5C 95.3531,6.49025 89.5198,9.15692 84,12.5C 84.7519,17.1012 85.5852,21.7679 86.5,26.5C 85.0695,26.4208 83.7362,26.7542 82.5,27.5C 81.913,26.7666 81.913,25.7666 82.5,24.5C 83.2485,23.469 83.9152,22.3024 84.5,21C 83.1544,16.6842 81.4877,13.1842 79.5,10.5C 83.1225,7.94585 87.1225,5.94585 91.5,4.5C 95.1452,3.42057 98.6452,2.7539 102,2.5C 104.042,4.04273 106.208,5.37606 108.5,6.5 Z"/></g>
 <g><path style="opacity:1" fill="#96908c" d="M 100.5,-0.5 C 102.167,-0.5 103.833,-0.5 105.5,-0.5C 106.242,1.9798 107.242,4.31314 108.5,6.5C 106.208,5.37606 104.042,4.04273 102,2.5C 98.6452,2.7539 95.1452,3.42057 91.5,4.5C 94.5914,3.02274 97.5914,1.35608 100.5,-0.5 Z"/></g>
 <g><path style="opacity:1" fill="#fafafa" d="M 100.5,24.5 C 96.1338,26.3713 91.4671,27.038 86.5,26.5C 85.5852,21.7679 84.7519,17.1012 84,12.5C 89.5198,9.15692 95.3531,6.49025 101.5,4.5C 104.529,8.05112 107.196,11.8844 109.5,16C 106.669,18.9973 103.669,21.8307 100.5,24.5 Z"/></g>
