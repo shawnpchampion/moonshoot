@@ -239,7 +239,10 @@
 }
 
 @keyframes rotate {
-    0% { transform: translateX(0%); }
+to {
+	transform: rotate(360deg);
+	}
+ /* 0% { transform: translateX(0%); }
   5% { transform: translateX(0%) rotate(0deg) scale(1); } 
   20% { transform: translateX(0%) rotate(270deg) scale(1); }
   40% { transform: translateY(-50%) rotate(270deg) scale(1); }
@@ -248,7 +251,7 @@
   70% { transform: translateY(-40%) rotate(270deg) scale(1); }
   90% { transform: translateY(-100%) rotate(270deg) scale(1); }
   95% { transform: translateY(-100%) rotate(270deg) scale(1); }
-  100% { transform: translateY(-100%) rotate(270deg); }
+  100% { transform: translateY(-100%) rotate(270deg); } */
 
 }	
     
@@ -260,21 +263,6 @@
   </head>
   <body id="page-top" style="background-color:black; padding-top:0 !important; padding-bottom:0">
   
-<!--    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg> -->
 
         <header class="text-white" style="background: linear-gradient(180deg,#0a0c21,rgba(0,0,0) 90%); box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); padding-top: 5rem !important; padding-bottom: 5rem">
             <div class="container px-4 text-center">
@@ -296,28 +284,34 @@
             </div>
 	</div>		
 	-->
-	  
+
+<!-- Phase1 Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color:black">Help Us Get To Outer Space</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="color:black">
+        With a diverse line of products and investments, every dollar we make gets us one step closer to that giant leap
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>	  
+
     <div class="container px-4 py-5" id="custom-cards" style="background-color:black">
         <h2 class="reveal pb-2 border-bottom" style="color:white">The Mission</h2>
 
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
             <div class="reveal col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('space5.png');">
+                <div type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('space5.png');">
                     <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                         <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Phase 1</h3>
-      <!--      <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-              </li>    
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                <small>Earth</small>
-              </li>   
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small>3d</small>
-              </li>   
-            </ul> -->
                     </div>
                 </div>
             </div>
@@ -326,19 +320,6 @@
                 <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('space7.png');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Phase 2</h3><div style="height:10rem"></div>
-           <!-- <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                <small>Pakistan</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small>4d</small>
-              </li>
-            </ul> -->
           </div>
         </div>
       </div>
@@ -347,19 +328,6 @@
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('space8.png');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1" style="border-color: white; border-block-width: 0.1px; border-style: solid">
             <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Phase 3</h3>
-        <!--    <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                <small>California</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small>5d</small>
-              </li>
-            </ul> -->
           </div>
         </div>
       </div>
@@ -375,15 +343,6 @@
                 <div class="row">
                     <div class="reveal">
 			<h2 class="pb-2 border-bottom" style="color:white">The Astronauts</h2>
-		   <!-- <div style="position:absolute; top: 0px; right: 0px; color: white; width: 100%; background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(25px) brightness(100%); background: radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%);">
-                        <h2>F1</h2>
-			</div>
-                        <div style="position:absolute; top: 0px; right: 0px; color: white; width: 100%; background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background: radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%);">
-                        <h2>F2</h2>
-			</div>
-			<div class="rounded bg-dark" style="box-shadow: inset 0 0 1rem rgba(0, 0, 0, .5); text-align:center; position:absolute; top: 0px; right: 0px; width: 100%">
-			<h2>The Astronauts</h2>
-			</div> -->
                     </div>
                 </div>
             </div>
@@ -401,7 +360,7 @@
 						<h2 class="fw-normal">The Man</h2>
                         <p>Some representative placeholder content for the first column.</p>
                         <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
-                    </div><!-- /.col-lg-4 -->
+                    </div>
                     <div class="reveal1 col-lg-4" style="padding-bottom: 2rem">
                         <div style="position:relative; height:140px; padding-bottom: 10rem">
 						    <svg style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(10px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
@@ -416,7 +375,7 @@
                         <p>Representative placeholder content for the second column.</p>
 						
                         <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
-                    </div><!-- /.col-lg-4 -->
+                    </div>
                     <div class="reveal2 col-lg-4" style="padding-bottom: 2rem">
                         <div style="position:relative; height:140px; padding-bottom: 10rem">
 						    <svg style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(45px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
@@ -427,12 +386,11 @@
                                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="black"></rect></svg>
 					            </div>
 					    </div>
-<!-- <svg style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px); brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
-     -->                   <h2 class="fw-normal">The Legend</h2>
+                        <h2 class="fw-normal">The Legend</h2>
                         <p>And lastly this, the third column of representative placeholder content.</p>
                         <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
-                    </div><!-- /.col-lg-4 -->
-                </div><!-- /.row -->
+                    </div>
+                </div>
             </div>
 		
 		
@@ -454,29 +412,9 @@
   <div class="container marketing" style="text-align: center">
 
     <!-- Three columns of text below the carousel -->
-<!--	
-    <div class="row">
-	  <h2 style="text-align:center; margin-top: 3rem; margin-bottom: 4rem; color:white">The Astronauts</h2>
-      <div class="reveal col-lg-4" style="margin-bottom: 3.5rem">
-        <svg style="background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg>
-        <h2 class="fw-normal" style="margin-top: 1rem; color:white">The Man</h2>
-     
-      </div>
-      <div class="reveal col-lg-4" style="margin-bottom: 3.5rem">
-        <svg style="background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg>
-        <h2 class="fw-normal" style="margin-top: 1rem; color:white">The Myth</h2>
-
-      </div>
-      <div class="reveal col-lg-4" style="margin-bottom: 3.5rem">
-        <svg 					style="background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg>
-        <h2 class="fw-normal" style="margin-top: 1rem; color:white">The Legend</h2>
-
-      </div>
-    </div>
--->
 
     <!-- START THE FEATURETTES -->
-<!-- </section> -->
+
     <hr class="featurette-divider">
 
     <div class="reveal row featurette">
@@ -484,8 +422,7 @@
         <h2 class="featurette-heading fw-normal lh-1">T-Shirts <span class="text-body-secondary" style="color:#0d6efd !important">$25</span></h2>
         <p class="lead">Black / White ~ All Sizes Available</p>
       </div>
-	      <!--  <div class="col-md-5 order-md-1 page3">
-            </div> -->
+	    
 			<div class="col-md-5">
 			<div style="position:relative; height:15rem">
 						    <div class="pagesc" style="position:absolute; top: 0px; height:15rem; width:100%"></div>
@@ -514,31 +451,7 @@
 
     <hr class="featurette-divider">
 
-<!--    <div class="reveal row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading fw-normal lh-1">Magnets <span class="text-body-secondary" style="color:#0d6efd">$10</span></h2>
-            <p class="lead">3"x 3" ~ Custom Sizes Also Available</p>
-        </div>
 
-        <div class="col-md-5">
-
-
-				        <div style="position:relative; height:15rem">
-						    <div class="pageh" style="position:absolute; top: 0px; height:15rem; width:100%"></div>
-							<div class="pageh" style="filter:blur(5px);position:absolute; top: 0px; height:15rem; width:100%"></div>
-						
-						    <div class="hoverlay" style="position:absolute; top: 0px; height:15rem; width:100%"></div>
-
-					    </div>
-		
-		        
-				
-			
-       </div>
-	   
-    </div> 
-
-   <hr class="featurette-divider" style="margin-bottom:0"> -->
 
     <!-- /END THE FEATURETTES -->
 
