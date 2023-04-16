@@ -242,8 +242,73 @@
 to {
 	transform: rotate(360deg);
 	}
-
 }	
+	    
+
+.cube-wrap {
+  --size: 5vmin;
+ /* position: fixed; */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  perspective: 100vmin;
+}
+.cube {
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+  animation: cube 0.5s linear;
+}
+@keyframes cube {
+  to {
+    transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+  }
+}
+
+.side {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-color: #eee;
+  backface-visibility: visible;
+  top: calc(var(--size) * -.5);
+  left: calc(var(--size) * -.5);
+}
+.top {
+  background-color: #fff;
+  transform: rotateX(90deg) translateZ(calc(var(--size) * .5));
+}
+.bottom {
+  background-color: #999;
+  transform: rotateX(90deg) translateZ(calc(var(--size) * -.5));
+}
+.left {
+  background-color: #ccc;
+  transform: rotateY(90deg) translateZ(calc(var(--size) * .5));
+}
+.right {
+  background-color: #ddd;
+  transform: rotateY(90deg) translateZ(calc(var(--size) * -.5));
+}
+.front {
+  background-color: #aaa;
+  transform: translateZ(calc(var(--size) * .5));
+}
+.back {
+  background-color: #bbb;
+  transform: translateZ(calc(var(--size) * -.5));
+}
+
+:root * {
+  /* Pause the animation */
+  animation-play-state: paused;
+  /* Bind the animation to scroll */
+  animation-delay: calc(var(--scroll) * -1s);
+  /* These last 2 properites clean up overshoot weirdness */
+  animation-iteration-count: 2;
+  animation-fill-mode: both;
+}	    
     
     </style>
 
@@ -769,6 +834,18 @@ to {
 <g><path style="opacity:1" fill="#191c1a" d="M 80.5,171.5 C 78.676,182.057 77.8426,192.724 78,203.5C 82.2669,204.822 86.4336,204.822 90.5,203.5C 90.8333,203.5 91.1667,203.5 91.5,203.5C 91.6107,204.117 91.944,204.617 92.5,205C 97.1709,205.538 101.838,206.038 106.5,206.5C 106.666,213.508 106.5,220.508 106,227.5C 105.003,229.323 103.836,230.99 102.5,232.5C 100.596,232.738 99.2623,233.738 98.5,235.5C 93.3373,239.144 88.004,242.644 82.5,246C 70.8369,246.13 59.1702,245.963 47.5,245.5C 46.8333,245.5 46.1667,245.5 45.5,245.5C 45.1583,244.662 44.4916,244.328 43.5,244.5C 47.3123,243.676 51.3123,243.176 55.5,243C 51.9748,242.821 48.6414,242.321 45.5,241.5C 48.4243,240.608 51.2576,240.275 54,240.5C 59.8648,242.214 65.6981,242.881 71.5,242.5C 67.6877,243.324 63.6877,243.824 59.5,244C 66.4962,244.834 73.4962,245.167 80.5,245C 86.3421,241.246 92.0087,237.246 97.5,233C 101.028,230.61 103.361,227.443 104.5,223.5C 104.5,218.167 104.5,212.833 104.5,207.5C 100.5,207.5 96.5,207.5 92.5,207.5C 86.8333,206.833 81.1667,206.167 75.5,205.5C 75.5,204.5 75.5,203.5 75.5,202.5C 76.2769,193.843 76.9436,185.177 77.5,176.5C 77.9724,174.469 78.9724,172.802 80.5,171.5 Z"/></g>
 <g><path style="opacity:1" fill="#9a9a99" d="M 98.5,235.5 C 94.0475,240.221 89.0475,244.221 83.5,247.5C 76.5,247.5 69.5,247.5 62.5,247.5C 57.5,246.833 52.5,246.167 47.5,245.5C 59.1702,245.963 70.8369,246.13 82.5,246C 88.004,242.644 93.3373,239.144 98.5,235.5 Z"/></g>
 			</svg>
+		
+<div class="cube-wrap"> 							
+  <div class="cube"> 
+  <div class="side top" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+    <div class="side bottom" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+    <div class="side front" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+    <div class="side back" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+    <div class="side left" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+    <div class="side right" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+  </div>
+</div>
+		
 	</a> 	
 	
 	
