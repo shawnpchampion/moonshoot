@@ -231,11 +231,11 @@
   margin-left: -50px;
 */
   animation: rotate 1s linear infinite;
-  animation-play-state: paused;
+ /* animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
 
   animation-iteration-count: 1;
-  animation-fill-mode: both;
+  animation-fill-mode: both; */
 }
 
 @keyframes rotate {
@@ -300,15 +300,7 @@ to {
   transform: translateZ(calc(var(--size) * -.5));
 }
 
-:root * {
-  /* Pause the animation */
-  animation-play-state: paused;
-  /* Bind the animation to scroll */
-  animation-delay: calc(var(--scroll) * -1s);
-  /* These last 2 properites clean up overshoot weirdness */
-  animation-iteration-count: 2;
-  animation-fill-mode: both;
-}	    
+	
     
     </style>
 
