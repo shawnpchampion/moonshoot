@@ -259,7 +259,7 @@ to {
 .cube {
   transform-style: preserve-3d;
   transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
-  animation: cube 0.5s linear;
+  animation: cube 0.5s linear infinite;
 }
 @keyframes cube {
   to {
@@ -308,15 +308,7 @@ to {
   background-position: center !important;
   transform: translateZ(calc(var(--size) * -.5));
 }
-:root * {
-  /* Pause the animation */
-  animation-play-state: paused;
-  /* Bind the animation to scroll */
-  animation-delay: calc(var(--scroll) * -1s);
-  /* These last 2 properites clean up overshoot weirdness */
-  animation-iteration-count: 2;
-  animation-fill-mode: both;
-}
+
 	
     
     </style>
