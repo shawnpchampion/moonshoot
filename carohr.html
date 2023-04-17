@@ -275,11 +275,11 @@ to {
 }
 
 .cube-wrapersm {
-  --size: 30vmin;
+  --size: 20vmin;
   position: fixed; 
  /* position: relative; */
-  top: 20%;
-  left: 10%;
+  top: 15%;
+  left: 15%;
   width: 0;
   height: 0;
   perspective: 100vmin;
@@ -457,7 +457,7 @@ to {
 	  
 	  
 	  
-	  
+<!-- Cube for Mobile -->	  
 <div class="d-block d-sm-none">
  <div class="cube-wrapersm"> 							
  <div class="cubesm"> 
@@ -477,7 +477,7 @@ to {
 </div> 
     
 	
-	
+<!-- Cube for Non-Mobile -->
 <div class="d-none d-sm-block">
 	 
 	 
@@ -501,7 +501,7 @@ to {
 </div>
 	  
 	  
-	  
+<!-- First Section -->  
         <header class="text-white" style="background: linear-gradient(180deg,#0a0c21,rgba(0,0,0) 90%); box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); padding-top: 5rem !important; padding-bottom: 5rem">
             <div class="container px-4 text-center">
                  <div class="page8" style="height: 20rem">
@@ -521,7 +521,7 @@ to {
 	-->
 	  
 	  
-<!-- Modaal section-->
+<!-- Modal section-->
 <!-- Phase1 Modal -->
 <div class="modal fade" id="P1M" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -558,7 +558,7 @@ to {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary">Learn More</button>
-        <button type="button" class="btn btn-primary">Donate Now</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Donate Now</button>
       </div>
     </div>
   </div>
@@ -577,7 +577,7 @@ to {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary">Learn More</button>
-        <button type="button" class="btn btn-primary">Donate Now</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Donate Now</button>
       </div>
     </div>
   </div>
@@ -1213,8 +1213,8 @@ to {
       </div>
       <div class="modal-footer">
         <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Bitcoin</button>
-		<button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Ethereum</button>
-		<button class="btn btn-primary" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">Other</button>
+	<button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Ethereum</button>
+	<button class="btn btn-primary" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">Other</button>
       </div>
     </div>
   </div>
@@ -1272,7 +1272,13 @@ to {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Hit us up and let us know what you got!
+	       <div class="card" style="align-items: center">
+  <img src="mswal.png" style="width: 18rem; margin-top: 1rem" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Hit us up and let us know what you got!</p>
+  </div>
+</div>
+        
       </div>
       <div class="modal-footer">
         <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
