@@ -259,7 +259,8 @@ to {
 .cube {
   transform-style: preserve-3d;
   transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
-  animation: cube 0.5s linear infinite;
+/*  animation: cube 0.5s linear infinite; */
+  animation: cube 20s linear infinite;
 }
 @keyframes cube {
   to {
@@ -309,6 +310,15 @@ to {
   transform: translateZ(calc(var(--size) * -.5));
 }
 
+/*	    :root * {
+ 
+  animation-play-state: paused;
+  
+  animation-delay: calc(var(--scroll) * -1s);
+  
+  animation-iteration-count: 2;
+  animation-fill-mode: both;
+} */
 	
     
     </style>
