@@ -232,7 +232,7 @@
   width: 0;
   height: 0;
   perspective: 100vmin;
-  opacity: 0.1;
+  opacity: 0.2;
 }	 
 	    
 .cubebg {
@@ -445,8 +445,8 @@
 </div>	  -->
     
 <!-- Big Cube for Mobile -->
-	   <div id="green">
-<div class="d-block d-sm-none">	 
+<div id="green">
+<!-- <div class="d-block d-sm-none">	 -->
   <div class="cube-wraperbg"> 							
     <div class="cubebg"> 
       <div class="side top" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
@@ -456,10 +456,10 @@
       <div class="side left" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
       <div class="side right" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
     </div>
-  </div>
+  </div> 
+<!-- </div> -->
 </div>
-	</div>
-<!-- Cube for Non-Mobile -->
+<!-- Cube for Non-Mobile 
 <div class="d-none d-sm-block">	 
   <div class="cube-wraper"> 							
     <div class="cube"> 
@@ -471,7 +471,7 @@
       <div class="side right" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
     </div>
   </div>
-</div>
+</div> -->
 	 
 	  
 <!-- First Section -->  
@@ -1056,22 +1056,10 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>	
-	
-	
-		
-	
-	
 	
  <!--   <script src="bootstrap.bundle.min.js"></script> -->
 
-	<script>
+<script>
 	function reveal() {
   var reveals = document.querySelectorAll(".reveal");
 
@@ -1091,48 +1079,8 @@
 window.addEventListener("scroll", reveal);
 
 </script>
+
 <script>
-function reveal1() {
-  var reveals1 = document.querySelectorAll(".reveal1");
-
-  for (var i = 0; i < reveals1.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals1[i].getBoundingClientRect().top;
-    var elementVisible = 1;
-
-    if (elementTop < windowHeight - elementVisible) {
-      reveals1[i].classList.add("active");
-    } else {
-      reveals1[i].classList.remove("active");
-    }
-  }
-}
-
-window.addEventListener("scroll", reveal1);
-
-</script>
-<script>
-function reveal2() {
-  var reveals2 = document.querySelectorAll(".reveal2");
-
-  for (var i = 0; i < reveals2.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals2[i].getBoundingClientRect().top;
-    var elementVisible = 1;
-
-    if (elementTop < windowHeight - elementVisible) {
-      reveals2[i].classList.add("active");
-    } else {
-      reveals2[i].classList.remove("active");
-    }
-  }
-}
-
-window.addEventListener("scroll", reveal2);
-
-</script>
-	
-	    	<script>
 window.addEventListener(
   "scroll",
   () => {
@@ -1162,13 +1110,6 @@ gsap.set('#green', {xPercent:-50});
         duration: 1,
         ease: 'none'
       });
-
-
-
-
 		</script>	
-	
-
-      
   </body>
 </html>
