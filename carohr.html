@@ -1,9 +1,9 @@
 
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="color-modes.js"></script>
+  <head>
+  <script src="color-modes.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 
     <meta charset="utf-8">
@@ -12,13 +12,16 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.111.3">
     <title>MoonShoot</title>
-	   <link rel="icon" type="image/x-icon" href="sficon.png" />
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-<link href="bootstrap.min.css" rel="stylesheet">
-    <link href="carousel.css" rel="stylesheet">
+  
+  <link rel="icon" type="image/x-icon" href="sficon.png" />
+	  
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/"> -->
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="carousel.css" rel="stylesheet">
 
-    <style>
+   <style>
+/*	   
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -87,10 +90,11 @@
         --bs-btn-active-bg: #5a23c8;
         --bs-btn-active-border-color: #5a23c8;
       }
+	   */
       .bd-mode-toggle {
         z-index: 1500;
       }
-	  
+	 /* 
 	    .page1 {
   background-image: url('sticker3.png');
   background-repeat: no-repeat;
@@ -110,10 +114,10 @@
       background:rgb(0,0,0);
       background-image: url('earth3.jpg');
       background-repeat: no-repeat;
-/*      background-attachment: fixed; */ 
       background-size: contain;
       background-position: right;
-    }
+    } 
+	   */
 	    
 	    .page8 {
         /*    background-image: url('palm-tree8.png'); */
@@ -134,7 +138,7 @@
   transform: translateY(0);
   opacity: 1;
 }
-
+/*
 	.reveal1{
   position: relative;
   transform: translateY(150px);
@@ -158,6 +162,7 @@
   transform: translateY(0);
   opacity: 1;
 }
+	   
 		  .pageh {
   background-image: url('rbrcloud.png');
   background-repeat: no-repeat;
@@ -172,7 +177,7 @@
   background-size: contain;
   background-position: center;
   filter: blur(5px) brightness(100%);
-    }
+    } */
 
 	.hoverlay {
 
@@ -202,16 +207,12 @@
 }
 	    
 	    
-	    
+/*	    
 .scroll-to-top {
     position: fixed;
     right: 1rem;
     bottom: 1rem;
     display: none;	
-/*    width: 2.75rem;
-    height: 2.75rem;
-	background: rgba(90,92,105,.5);
-	*/
   text-align: center;
     color: #fff;
     
@@ -221,33 +222,11 @@
 	.rounded {
     border-radius: 0.35rem!important;
 	}
-	
-	    .svg1 {
-/*
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -50px;
-*/
-  animation: rotate 1s linear infinite;
- /* animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -1s);
-
-  animation-iteration-count: 1;
-  animation-fill-mode: both; */
-}
-
-@keyframes rotate {
-to {
-	transform: rotate(360deg);
-	}
-}	
+	*/	
 
 .cube-wraperbg {
   --size: 40vmin;
   position: fixed; 
- /* position: relative; */
   top: 50%;
   left: 50%;
   width: 0;
@@ -346,7 +325,6 @@ to {
   transform: rotateY(90deg) translateZ(calc(var(--size) * -.5));
 }
 .front {
- /* background-color: #aaa; */
 	 background-image: url('Buffer.png') !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
@@ -354,7 +332,7 @@ to {
   transform: translateZ(calc(var(--size) * .5));
 }
 .back {
-  /* background-color: #bbb; */
+ 
 	 background-image: url('rbBuffer.png') !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
@@ -362,23 +340,11 @@ to {
   transform: translateZ(calc(var(--size) * -.5));
 }
 
-/*	    :root * {
- 
-  animation-play-state: paused;
-  
-  animation-delay: calc(var(--scroll) * -1s);
-  
-  animation-iteration-count: 2;
-  animation-fill-mode: both;
-} */
 	    
 #green{
   position:fixed;
   left: 50%;
   top: 35%;
-/*   width:150px;
-  height:150px;
- background:green;*/
 	opacity:1; 
   }
 	
