@@ -2,9 +2,9 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="color-modes.js"></script>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -248,7 +248,7 @@ to {
   --size: 30vmin;
   position: fixed; 
  /* position: relative; */
-  top: 40%;
+  top: 50%;
   left: 50%;
   width: 0;
   height: 0;
@@ -372,7 +372,7 @@ to {
   animation-fill-mode: both;
 } */
 	    
-	    .green{
+#green{
   position:fixed;
   left: 50%;
   top: 100px;
@@ -478,6 +478,7 @@ to {
 </div>	  -->
     
 <!-- Big Cube for Mobile -->
+	   <div id="green">
 <div class="d-block d-sm-none">	 
   <div class="cube-wraperbg"> 							
     <div class="cubebg"> 
@@ -490,7 +491,7 @@ to {
     </div>
   </div>
 </div>
-	
+	</div>
 <!-- Cube for Non-Mobile -->
 <div class="d-none d-sm-block">	 
   <div class="cube-wraper"> 							
@@ -1496,40 +1497,28 @@ window.addEventListener(
 );
 </script>
 	
-	 <script>
-const dev = {};
+ <script>
 
-dev.interactions = {
-
-  button: function() {
-
-      let $button = document.querySelector('a.green');
-      gsap.set($button, {
-        top: Math.floor(Math.random() * (window.innerHeight - $button.offsetHeight)),
-        left: Math.floor(Math.random() * (window.innerWidth - $button.offsetWidth)),
-        opacity: 1
-      });
-
+gsap.set('#green', {xPercent:-50});
       var rotate = gsap.timeline({
         scrollTrigger: {
           trigger: 'html',
           scrub: 0.2,
+		  
           start: 'top top',
           end:'+=10000',
         }
-      }).to($button, {
-        rotation: 360 * 5,
+      })
+	  .to('#green', {
+        rotation: 360 * 1,
         duration: 1,
         ease: 'none'
       });
 
-  }
-  
-};
-dev.interactions.button();
 
 
-		</script>
+
+		</script>	
 	
 
       
