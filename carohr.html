@@ -121,11 +121,57 @@
 	    
 	    .page8 {
         /*    background-image: url('palm-tree8.png'); */
+		    background-image: url('digitallogonorocket.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+              animation: shimmy .1s linear infinite;
+			 
+
+  animation-play-state: paused; 
+               animation-delay: calc(var(--scroll) * -1s); 
+		animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes shimmy {
+  to {
+    transform: translate(0, 300px);
+	opacity: 0%;
+  }
+}
+
+			
+		    .page18 {
+       
+		    background-image: url('digitallogorocket.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+			}
+		
+
+			
+							    .page28 {
+        /*    background-image: url('palm-tree8.png'); */
 		    background-image: url('digitallogo.png');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
+			 animation: fadeIn .001s linear infinite;
+			 
+
+  animation-play-state: paused; 
+               animation-delay: calc(var(--scroll) * -1s); 
+		animation-iteration-count: 1;
+  animation-fill-mode: both;
             }
+			
+			@keyframes fadeIn {
+ to { 
+  opacity: 0%; 
+  
+}}
 	    
 	.reveal{
   position: relative;
@@ -477,8 +523,15 @@
 <!-- First Section -->  
 <header class="text-white" style="background: linear-gradient(180deg,#0a0c21,rgba(0,0,0) 90%); box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); padding-top: 5rem !important; padding-bottom: 5rem">
   <div class="container px-4 text-center">
-    <div class="page8" style="height: 20rem"></div>
-  </div>    
+  <div style="position:relative">
+          <div class="page8" style="height: 20rem"></div>
+		  <div style="position:absolute; top:0px; width:100%">
+            <div class="page18" style="height: 20rem"></div>   
+          </div>
+		  <div style="position:absolute; top:0px; width:100%">
+            <div class="page28" style="height: 20rem"></div>   
+          </div>
+</div>		  
 </header>
 
 	  
