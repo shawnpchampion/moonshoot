@@ -2,25 +2,39 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
-  <script src="color-modes.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.111.3">
+<!--    <meta name="generator" content="Hugo 0.111.3"> -->
     <title>MoonShoot</title>
-  
-  <link rel="icon" type="image/x-icon" href="sficon.png" />
-	  
+    <link rel="icon" type="image/x-icon" href="sficon.png" />
+
+<!-- For Bootstrap -->	  
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/"> -->
   <link href="bootstrap.min.css" rel="stylesheet">
   <link href="carousel.css" rel="stylesheet">
 
-   <style>
+<!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/"> -->
+
+
+	  
+	  <!-- Used for animated gradient text -->	
+	<link rel="stylesheet" href="ccstyle.css">
+	  
+<!-- For  bootstrap html data-bs-theme toggle -->
+  <script src="color-modes.js"></script>
+	  
+<!-- For Rocket Launch -->	  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	  
+<!-- For paper airplane button -->	
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> 
+
+  <link rel="stylesheet" href="dstyle.css">	  
+	  
+<style>
 /*	   
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -94,34 +108,10 @@
       .bd-mode-toggle {
         z-index: 1500;
       }
-	 /* 
-	    .page1 {
-  background-image: url('sticker3.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  height:15rem;
-    }
-		    .page3 {
-  background-image: url('shirt3.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  height:15rem;
-    }
 	
-	.page2 {
-      background:rgb(0,0,0);
-      background-image: url('earth3.jpg');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: right;
-    } 
-	   */
-	    
+/* Rocket Launch */	 	    
 	    .page8 {
-        /*    background-image: url('palm-tree8.png'); */
-		    background-image: url('digitallogonorocket.png');
+       background-image: url('digitallogonorocket.png');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
@@ -172,7 +162,7 @@
   opacity: 0%; 
   
 }}
-	    
+/* Fade in while scrolling down */		    
 	.reveal{
   position: relative;
   transform: translateY(150px);
@@ -184,47 +174,8 @@
   transform: translateY(0);
   opacity: 1;
 }
-/*
-	.reveal1{
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-}
 
-.reveal1.active{
-  transform: translateY(0);
-  opacity: 1;
-}
-
-	.reveal2{
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-}
-
-.reveal2.active{
-  transform: translateY(0);
-  opacity: 1;
-}
-	   
-		  .pageh {
-  background-image: url('rbrcloud.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  filter: blur(5px) brightness(100%);
-    }
-	
-			  .pagesc {
-  background-image: url('scloud.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  filter: blur(5px) brightness(100%);
-    } */
-
+/* Top layer for The Collection to sit on top gradient layers */	
 	.hoverlay {
 
    background-image: url('sticker3.png');
@@ -253,23 +204,8 @@
 }
 	    
 	    
-/*	    
-.scroll-to-top {
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    display: none;	
-  text-align: center;
-    color: #fff;
-    
-    line-height: 46px;
-	}
 	
-	.rounded {
-    border-radius: 0.35rem!important;
-	}
-	*/	
-
+/* The Cubes */	
 .cube-wraperbg {
   --size: 10vmin;
   position: fixed; 
@@ -393,7 +329,40 @@
   top: 35%;
 	opacity:1; 
   }
+
+/* For Blue Gradient Animated Card Background */ 
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  0% { --rotate: 0deg;
+  }
+  100% { --rotate: 360deg;
+  }
+}
+
+
+/* For Carousel */ 
+
+.carousel-item {
+    height: 100% !important;
+}
+
+.carousel-control-next-icon {
+    filter: invert(0) !important;
+	}
+	.carousel-control-prev-icon {
+    filter: invert(0) !important;
+	}
 	
+	.carousel-indicators [data-bs-target] {
+	background-color:white !important;
+	}
+		
     
     </style>
 
