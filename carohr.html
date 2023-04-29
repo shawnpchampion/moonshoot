@@ -1076,12 +1076,22 @@
 	
 	
 
+<!-- For animated gradient text -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+  <script>
+  $('.txt').html(function(i, html) {
+  var chars = $.trim(html).split("");
 
+  return '<span>' + chars.join('</span><span>') + '</span>';
+});
+</script>
 	
 	
  <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
+       
+	<!-- Core theme JS-->
         <script src="js/scripts.js"></script>
 		
 		<!-- Bootstrap core JavaScript-->
@@ -1096,6 +1106,11 @@
 	
  <!--   <script src="bootstrap.bundle.min.js"></script> -->
 
+	 <!-- For Paper Airplane Button -->	
+	<script src="dscript.js"></script>
+
+
+<!-- For Fade In Whille Scrolling -->	
 <script>
 	function reveal() {
   var reveals = document.querySelectorAll(".reveal");
@@ -1116,7 +1131,7 @@
 window.addEventListener("scroll", reveal);
 
 </script>
-
+<!-- For Original Robot/Cube Scrolling -->
 <script>
 window.addEventListener(
   "scroll",
@@ -1129,7 +1144,7 @@ window.addEventListener(
   false
 );
 </script>
-	
+	<!-- For Cube Scrolling -->	
  <script>
 
 gsap.set('#green', {xPercent:-50});
