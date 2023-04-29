@@ -11,7 +11,8 @@
     <title>MoonShoot</title>
     <link rel="icon" type="image/x-icon" href="sficon.png" />
 	
-	 
+	 	<!-- For GLitch -->
+	 <link rel="stylesheet" href="glstyle.css">
 	
 <!-- Used for animated gradient text -->	
 	<link rel="stylesheet" href="ccstyle.css">
@@ -326,7 +327,7 @@
 	background-color:white !important;
 	}
 	
-/* For Glitch */	
+/* For Glitch 	
 #gcontainer > * {
 position:relative;
 }
@@ -338,7 +339,7 @@ position:relative;
 .hide {
   display: none;
 }	
-
+*/
 	
 	
 
@@ -833,7 +834,36 @@ position:relative;
 -->
     <hr class="featurette-divider">
 
+ <h1 class="featurette-heading fw-normal lh-1">Our First NFT Collection</h1>
+      <h2 class="txt anim-text-flow">Launching Soon!</h2>
+	  <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+	  
+  <div class="list-group">
+    
+     
+    
+        <ul id="ul" style="padding-left:0 !important">
+    <li><img src="r2.png" alt=""></li>
+    <li><img src="r1.png" alt=""></li>
+</ul>
+
+<svg>
+    <defs>
+        <filter id="fe1">
+            <feTurbulence id="animation" type="turbulence" baseFrequency="0.01 0.1" numOctaves="3" result="warp">
+                <animate attributeName="baseFrequency" from="0.01 0.1" to="1 0.01" dur="23.8s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feOffset dx="0" dy="0" result="warpOffset"></feOffset>
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="10" in="SourceGraphic" in2="warpOffset"></feDisplacementMap>
+        </filter>
+    </defs>
+</svg>	
+     
+  </div>
+</div>	 
 	 
+	 
+<!--	 
 <div id="gcontainer" class="px-4 text-center">
 		 <h1 class="featurette-heading fw-normal lh-1">Our First NFT Collection</h1>
       <h2 class="txt anim-text-flow">Launching Soon!</h2>
@@ -841,26 +871,22 @@ position:relative;
     <filter id="filter" x="0" y="0">
         <feColorMatrix in="SourceGraphic" mode="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
         <feOffset in="r" result="r2" >
-<!--           <animate attributeName="dx" attributeType="XML" values="0;-5;0;-18;-2;-4;0;-3;0" dur="0.2s" repeatCount="indefinite"/> -->
-        </feOffset>
+  </feOffset>
         <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
         <feOffset in="g" result="g2" dy="1">
-<!--           <animate attributeName="dx" attributeType="XML" values="0;0;0;-3;0;8;0;-1;0" dur="0.15s" repeatCount="indefinite"/> -->
-        </feOffset>
+    </feOffset>
         <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
         <feOffset in="b" result="b2" dy="2">
-<!--           <animate attributeName="dx" attributeType="XML" values="0;3;-1;4;0;2;0;18;0" dur="0.35s" repeatCount="indefinite"/> -->
-        </feOffset>
+    </feOffset>
         <feBlend in="r2" in2="g2" mode="screen" result="blend" />
         <feBlend in="blend" in2="b2" mode="screen" result="blend" />
     </filter>
   </svg>
   
-  <!-- Image needs to come _after_ the SVG or the animation won't work in Safari -->
   <img src="r1.png" style="height: 16rem">
   <img src="r2.png" style="height: 16rem" class="hide">
 </div>		 
-	 
+	 -->
 	 
 	    
 <!-- NFT Collection -->
@@ -1058,7 +1084,7 @@ position:relative;
 	
 	
 <!-- Modal section-->
-<!-- Phase1 Modal -->
+<!-- Phase1 Modal 
 <div class="modal fade px-3" id="P1M" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -1099,6 +1125,7 @@ position:relative;
     </div>
   </div>
 </div>	  
+-->
 
 
 <!-- Donate Modal -->
@@ -1261,9 +1288,11 @@ position:relative;
 -->
 
 
-
-<!-- For Glitch -->
-  <script  src="gscript.js"></script>	
+<!-- For GLitch -->
+  <script  src="glscript.js"></script>
+	
+<!-- For Glitch 
+  <script  src="gscript.js"></script>	-->
 	
 	
 <!-- For animated gradient text -->
