@@ -1,0 +1,42 @@
+
+
+ul li {
+  position: absolute;
+  height: 16rem;
+}
+ul img {
+  
+  height: 16rem;
+}
+ul .zindex {
+  z-index: 10;
+}
+
+
+ul .glitch {
+  filter: url(#fe1);
+}
+ul .fadeIn {
+  filter: url(#fe1);
+  -webkit-animation: fadeIn 1.8s ease-in forwards;
+          animation: fadeIn 1.8s ease-in forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
