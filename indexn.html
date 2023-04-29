@@ -1,0 +1,1398 @@
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>MoonShoot</title>
+    <link rel="icon" type="image/x-icon" href="sficon.png" />
+	
+	 
+	
+<!-- Used for animated gradient text -->	
+	<link rel="stylesheet" href="ccstyle.css">
+
+<!-- Used for Carousel but messes up other stuff 
+   <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet"> -->	
+
+<!-- For  bootstrap html data-bs-theme toggle -->
+  <script src="color-modes.js"></script> 
+  
+<!-- For rocket ship launch -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+<!-- For paper airplane button -->	
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> 
+
+  <link rel="stylesheet" href="dstyle.css">
+  
+<!-- For SVG Scroll Animation...not working yet -->
+<!--  	
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+<link rel="stylesheet" href="base.css">
+-->
+  
+  
+<!-- For extra crazy blob -->   
+<!--	   
+<link rel="stylesheet" type="text/css" href="index.47c52c93.css">
+<link rel="stylesheet" type="text/css" href="index.9fc08b13.css">
+-->
+
+
+<!-- For Bootstrap -->	  
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="carousel.css" rel="stylesheet">
+
+
+<style>
+
+/* Bootstrap */	 
+  
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+	   
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+	   
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+	  
+/* Rocket Launch */	 	    
+
+	    .page8 {
+        /*  background-image: url('palm-tree8.png'); */
+		    background-image: url('digitallogonorocket.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            animation: shimmy .1s linear infinite;
+            animation-play-state: paused; 
+            animation-delay: calc(var(--scroll) * -1s); 
+		    animation-iteration-count: 1;
+            animation-fill-mode: both;
+        }
+
+        @keyframes shimmy {
+          to {
+            transform: translate(0, 300px);
+	        opacity: 0%;
+             }
+        }
+
+		    .page18 {
+		      background-image: url('digitallogorocket.png');
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+			}
+			
+		    .page28 {
+		      background-image: url('digitallogo.png');
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+			  animation: fadeIn .001s linear infinite;
+			  animation-play-state: paused; 
+              animation-delay: calc(var(--scroll) * -1s); 
+		      animation-iteration-count: 1;
+              animation-fill-mode: both;
+            }
+			
+			@keyframes fadeIn {
+              to { 
+                opacity: 0%;  
+              }
+			}
+	    
+		
+/* Fade in while scrolling down */	 
+		
+	.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Top layer for The Collection to sit on top gradient layers */	
+ 
+	.hoverlay {
+      background-image: url('sticker3.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+	}
+			
+	.scoverlay {
+      background-image: url('shirts.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+	}
+	    
+	.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    }
+	    
+	.text-bg-dark {
+      color: #fff !important;
+      background-color: black !important;
+    }
+	    
+	    	
+/* The Cubes */	 
+
+.cube-wraperbg {
+  --size: 10vmin;
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  perspective: 100vmin;
+  opacity: 0.2;
+}	 
+	    
+.cubebg {
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+  animation: cubebg 40s linear infinite;
+}
+
+@keyframes cubebg {
+  to {
+    transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+  }
+}	    
+	    
+.cube-wraper {
+  --size: 50vmin;
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  perspective: 100vmin;
+  opacity: 0.2;
+}
+
+.cube {
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+  animation: cube 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes cube {
+  to {
+    transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+  }
+}
+
+.cube-wrapersm {
+  --size: 40vmin;
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  perspective: 100vmin;
+   opacity: 0.2;
+}
+
+.cubesm {
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+  animation: cubesm 20s linear infinite;
+}
+
+@keyframes cubesm {
+  to {
+    transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+  }
+}
+
+.side {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-color: #eee;
+  backface-visibility: visible;
+  top: calc(var(--size) * -.5);
+  left: calc(var(--size) * -.5);
+}
+.top {
+  background-color: #fff;
+  transform: rotateX(90deg) translateZ(calc(var(--size) * .5));
+}
+.bottom {
+  background-color: #999;
+  transform: rotateX(90deg) translateZ(calc(var(--size) * -.5));
+}
+.cleft {
+  background-color: #ccc;
+  transform: rotateY(90deg) translateZ(calc(var(--size) * .5));
+}
+.cright {
+  background-color: #ddd;
+  transform: rotateY(90deg) translateZ(calc(var(--size) * -.5));
+}
+.front {
+	 background-image: url('Buffer.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center !important;
+  transform: translateZ(calc(var(--size) * .5));
+}
+.back {
+ 
+	 background-image: url('rbBuffer.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center !important;
+  transform: translateZ(calc(var(--size) * -.5));
+}
+
+#green{
+  position:fixed;
+  left: 50%;
+  top: 35%;
+  opacity:1; 
+}
+
+/* For Blue Gradient Animated Card Background */ 
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  0% { --rotate: 0deg;
+  }
+  100% { --rotate: 360deg;
+  }
+}
+
+
+/* For Carousel */ 
+
+.carousel-item {
+    height: 100% !important;
+}
+
+.carousel-control-next-icon {
+    filter: invert(0) !important;
+	}
+	.carousel-control-prev-icon {
+    filter: invert(0) !important;
+	}
+	
+	.carousel-indicators [data-bs-target] {
+	background-color:white !important;
+	}
+	
+	
+
+	
+	
+
+  </style>
+
+</head>
+	
+<body id="page-top" style="background-color:black; padding-top:0 !important; padding-bottom:0">
+ 
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+	
+<symbol id="rocket" viewBox="0 0 16 16">
+  <path d="M8 8c.828 0 1.5-.895 1.5-2S8.828 4 8 4s-1.5.895-1.5 2S7.172 8 8 8Z"/>
+  <path d="M11.953 8.81c-.195-3.388-.968-5.507-1.777-6.819C9.707 1.233 9.23.751 8.857.454a3.495 3.495 0 0 0-.463-.315A2.19 2.19 0 0 0 8.25.064.546.546 0 0 0 8 0a.549.549 0 0 0-.266.073 2.312 2.312 0 0 0-.142.08 3.67 3.67 0 0 0-.459.33c-.37.308-.844.803-1.31 1.57-.805 1.322-1.577 3.433-1.774 6.756l-1.497 1.826-.004.005A2.5 2.5 0 0 0 2 12.202V15.5a.5.5 0 0 0 .9.3l1.125-1.5c.166-.222.42-.4.752-.57.214-.108.414-.192.625-.281l.198-.084c.7.428 1.55.635 2.4.635.85 0 1.7-.207 2.4-.635.067.03.132.056.196.083.213.09.413.174.627.282.332.17.586.348.752.57l1.125 1.5a.5.5 0 0 0 .9-.3v-3.298a2.5 2.5 0 0 0-.548-1.562l-1.499-1.83ZM12 10.445v.055c0 .866-.284 1.585-.75 2.14.146.064.292.13.425.199.39.197.8.46 1.1.86L13 14v-1.798a1.5 1.5 0 0 0-.327-.935L12 10.445ZM4.75 12.64C4.284 12.085 4 11.366 4 10.5v-.054l-.673.82a1.5 1.5 0 0 0-.327.936V14l.225-.3c.3-.4.71-.664 1.1-.861.133-.068.279-.135.425-.199ZM8.009 1.073c.063.04.14.094.226.163.284.226.683.621 1.09 1.28C10.137 3.836 11 6.237 11 10.5c0 .858-.374 1.48-.943 1.893C9.517 12.786 8.781 13 8 13c-.781 0-1.517-.214-2.057-.607C5.373 11.979 5 11.358 5 10.5c0-4.182.86-6.586 1.677-7.928.409-.67.81-1.082 1.096-1.32.09-.076.17-.135.236-.18Z"/>
+  <path d="M9.479 14.361c-.48.093-.98.139-1.479.139-.5 0-.999-.046-1.479-.139L7.6 15.8a.5.5 0 0 0 .8 0l1.079-1.439Z"/>
+</symbol>	
+	
+<symbol id="roket-fill" viewBox="0 0 16 16">
+	  <path d="M10.175 1.991c.81 1.312 1.583 3.43 1.778 6.819l1.5 1.83A2.5 2.5 0 0 1 14 12.202V15.5a.5.5 0 0 1-.9.3l-1.125-1.5c-.166-.222-.42-.4-.752-.57-.214-.108-.414-.192-.627-.282l-.196-.083C9.7 13.793 8.85 14 8 14c-.85 0-1.7-.207-2.4-.635-.068.03-.133.057-.198.084-.211.089-.411.173-.625.281-.332.17-.586.348-.752.57L2.9 15.8a.5.5 0 0 1-.9-.3v-3.298a2.5 2.5 0 0 1 .548-1.562l.004-.005L4.049 8.81c.197-3.323.969-5.434 1.774-6.756.466-.767.94-1.262 1.31-1.57a3.67 3.67 0 0 1 .601-.41A.549.549 0 0 1 8 0c.101 0 .17.027.25.064.037.017.086.041.145.075.118.066.277.167.463.315.373.297.85.779 1.317 1.537ZM9.5 6c0-1.105-.672-2-1.5-2s-1.5.895-1.5 2S7.172 8 8 8s1.5-.895 1.5-2Z"/>
+  <path d="M8 14.5c.5 0 .999-.046 1.479-.139L8.4 15.8a.5.5 0 0 1-.8 0l-1.079-1.439c.48.093.98.139 1.479.139Z"/>
+</symbol>
+	
+	<symbol id="roket-takeoff" viewBox="0 0 16 16">
+	<path d="M9.752 6.193c.599.6 1.73.437 2.528-.362.798-.799.96-1.932.362-2.531-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532Z"/>
+  <path d="M15.811 3.312c-.363 1.534-1.334 3.626-3.64 6.218l-.24 2.408a2.56 2.56 0 0 1-.732 1.526L8.817 15.85a.51.51 0 0 1-.867-.434l.27-1.899c.04-.28-.013-.593-.131-.956a9.42 9.42 0 0 0-.249-.657l-.082-.202c-.815-.197-1.578-.662-2.191-1.277-.614-.615-1.079-1.379-1.275-2.195l-.203-.083a9.556 9.556 0 0 0-.655-.248c-.363-.119-.675-.172-.955-.132l-1.896.27A.51.51 0 0 1 .15 7.17l2.382-2.386c.41-.41.947-.67 1.524-.734h.006l2.4-.238C9.005 1.55 11.087.582 12.623.208c.89-.217 1.59-.232 2.08-.188.244.023.435.06.57.093.067.017.12.033.16.045.184.06.279.13.351.295l.029.073a3.475 3.475 0 0 1 .157.721c.055.485.051 1.178-.159 2.065Zm-4.828 7.475.04-.04-.107 1.081a1.536 1.536 0 0 1-.44.913l-1.298 1.3.054-.38c.072-.506-.034-.993-.172-1.418a8.548 8.548 0 0 0-.164-.45c.738-.065 1.462-.38 2.087-1.006ZM5.205 5c-.625.626-.94 1.351-1.004 2.09a8.497 8.497 0 0 0-.45-.164c-.424-.138-.91-.244-1.416-.172l-.38.054 1.3-1.3c.245-.246.566-.401.91-.44l1.08-.107-.04.039Zm9.406-3.961c-.38-.034-.967-.027-1.746.163-1.558.38-3.917 1.496-6.937 4.521-.62.62-.799 1.34-.687 2.051.107.676.483 1.362 1.048 1.928.564.565 1.25.941 1.924 1.049.71.112 1.429-.067 2.048-.688 3.079-3.083 4.192-5.444 4.556-6.987.183-.771.18-1.345.138-1.713a2.835 2.835 0 0 0-.045-.283 3.078 3.078 0 0 0-.3-.041Z"/>
+  <path d="M7.009 12.139a7.632 7.632 0 0 1-1.804-1.352A7.568 7.568 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z"/>
+	</symbol>
+	
+	
+	<symbol id="roket-takeoff-fill" viewBox="0 0 16 16">
+	<path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.578 3.578 0 0 0-.108-.563 2.22 2.22 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2.35 2.35 0 0 0-.16-.045 3.797 3.797 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.552 2.552 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526l.24-2.408Zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361.599.599.437 1.732-.36 2.531Z"/>
+  <path d="M5.205 10.787a7.632 7.632 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925Z"/>
+	</symbol>
+	
+	<symbol id="moon-stars" viewBox="0 0 16 16">
+	<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+  <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+</symbol>
+
+	<symbol id="moon-stars-fill" viewBox="0 0 16 16">
+	<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+  <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+</symbol>
+	<symbol id="currency-bitcoin" viewBox="0 0 16 16">
+	<path d="M5.5 13v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.5v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.084c1.992 0 3.416-1.033 3.416-2.82 0-1.502-1.007-2.323-2.186-2.44v-.088c.97-.242 1.683-.974 1.683-2.19C11.997 3.93 10.847 3 9.092 3H9V1.75a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25V3h-.573V1.75a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25V3l-1.998.011a.25.25 0 0 0-.25.25v.989c0 .137.11.25.248.25l.755-.005a.75.75 0 0 1 .745.75v5.505a.75.75 0 0 1-.75.75l-.748.011a.25.25 0 0 0-.25.25v1c0 .138.112.25.25.25L5.5 13zm1.427-8.513h1.719c.906 0 1.438.498 1.438 1.312 0 .871-.575 1.362-1.877 1.362h-1.28V4.487zm0 4.051h1.84c1.137 0 1.756.58 1.756 1.524 0 .953-.626 1.45-2.158 1.45H6.927V8.539z"/>
+</symbol>
+	<symbol id="balloon-heart" viewBox="0 0 16 16">
+	 <path fill-rule="evenodd" d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721L8 2.42Zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063.045.041.089.084.132.129.043-.045.087-.088.132-.129 3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398Z"/>
+</symbol>
+	<symbol id="globe-americas" viewBox="0 0 16 16">
+	 <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"/>
+</symbol>
+	
+	<symbol id="robot" viewBox="0 0 16 16">
+	 <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z"/>
+  <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z"/>
+</symbol>
+	<symbol id="motherboard" viewBox="0 0 16 16">
+	<path d="M11.5 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5Zm2 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5Zm-10 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6ZM5 3a1 1 0 0 0-1 1h-.5a.5.5 0 0 0 0 1H4v1h-.5a.5.5 0 0 0 0 1H4a1 1 0 0 0 1 1v.5a.5.5 0 0 0 1 0V8h1v.5a.5.5 0 0 0 1 0V8a1 1 0 0 0 1-1h.5a.5.5 0 0 0 0-1H9V5h.5a.5.5 0 0 0 0-1H9a1 1 0 0 0-1-1v-.5a.5.5 0 0 0-1 0V3H6v-.5a.5.5 0 0 0-1 0V3Zm0 1h3v3H5V4Zm6.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2Z"/>
+  <path d="M1 2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 9H1V8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6H1V5H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 2H1Zm1 11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11Z"/>
+</symbol>
+	<symbol id="incognito" viewBox="0 0 16 16">
+	  <path fill-rule="evenodd" d="m4.736 1.968-.892 3.269-.014.058C2.113 5.568 1 6.006 1 6.5 1 7.328 4.134 8 8 8s7-.672 7-1.5c0-.494-1.113-.932-2.83-1.205a1.032 1.032 0 0 0-.014-.058l-.892-3.27c-.146-.533-.698-.849-1.239-.734C9.411 1.363 8.62 1.5 8 1.5c-.62 0-1.411-.136-2.025-.267-.541-.115-1.093.2-1.239.735Zm.015 3.867a.25.25 0 0 1 .274-.224c.9.092 1.91.143 2.975.143a29.58 29.58 0 0 0 2.975-.143.25.25 0 0 1 .05.498c-.918.093-1.944.145-3.025.145s-2.107-.052-3.025-.145a.25.25 0 0 1-.224-.274ZM3.5 10h2a.5.5 0 0 1 .5.5v1a1.5 1.5 0 0 1-3 0v-1a.5.5 0 0 1 .5-.5Zm-1.5.5c0-.175.03-.344.085-.5H2a.5.5 0 0 1 0-1h3.5a1.5 1.5 0 0 1 1.488 1.312 3.5 3.5 0 0 1 2.024 0A1.5 1.5 0 0 1 10.5 9H14a.5.5 0 0 1 0 1h-.085c.055.156.085.325.085.5v1a2.5 2.5 0 0 1-5 0v-.14l-.21-.07a2.5 2.5 0 0 0-1.58 0l-.21.07v.14a2.5 2.5 0 0 1-5 0v-1Zm8.5-.5h2a.5.5 0 0 1 .5.5v1a1.5 1.5 0 0 1-3 0v-1a.5.5 0 0 1 .5-.5Z"/>
+</symbol>
+	<symbol id="infinity" viewBox="0 0 16 16">
+	  <path d="M5.68 5.792 7.345 7.75 5.681 9.708a2.75 2.75 0 1 1 0-3.916ZM8 6.978 6.416 5.113l-.014-.015a3.75 3.75 0 1 0 0 5.304l.014-.015L8 8.522l1.584 1.865.014.015a3.75 3.75 0 1 0 0-5.304l-.014.015L8 6.978Zm.656.772 1.663-1.958a2.75 2.75 0 1 1 0 3.916L8.656 7.75Z"/>
+</symbol>
+	
+	<symbol id="qr-code-scan" viewBox="0 0 16 16">
+	<path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0v-3Zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5ZM.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5Zm15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5ZM4 4h1v1H4V4Z"/>
+  <path d="M7 2H2v5h5V2ZM3 3h3v3H3V3Zm2 8H4v1h1v-1Z"/>
+  <path d="M7 9H2v5h5V9Zm-4 1h3v3H3v-3Zm8-6h1v1h-1V4Z"/>
+  <path d="M9 2h5v5H9V2Zm1 1v3h3V3h-3ZM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8H8Zm2 2H9V9h1v1Zm4 2h-1v1h-2v1h3v-2Zm-4 2v-1H8v1h2Z"/>
+  <path d="M12 9h2V8h-2v1Z"/>
+		</symbol>
+	
+	<symbol id="astroh" viewBox="0 0 448 512">
+  <path d="M64 224h13.5c24.7 56.5 80.9 96 146.5 96s121.8-39.5 146.5-96H384c8.8 0 16-7.2 16-16v-96c0-8.8-7.2-16-16-16h-13.5C345.8 39.5 289.6 0 224 0S102.2 39.5 77.5 96H64c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16zm40-88c0-22.1 21.5-40 48-40h144c26.5 0 48 17.9 48 40v24c0 53-43 96-96 96h-48c-53 0-96-43-96-96v-24zm72 72l12-36 36-12-36-12-12-36-12 36-36 12 36 12 12 36zm151.6 113.4C297.7 340.7 262.2 352 224 352s-73.7-11.3-103.6-30.6C52.9 328.5 0 385 0 454.4v9.6c0 26.5 21.5 48 48 48h80v-64c0-17.7 14.3-32 32-32h128c17.7 0 32 14.3 32 32v64h80c26.5 0 48-21.5 48-48v-9.6c0-69.4-52.9-125.9-120.4-133zM272 448c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-96 0c-8.8 0-16 7.2-16 16v48h32v-48c0-8.8-7.2-16-16-16z"/>
+</symbol>
+
+</svg>	  
+
+<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+  <linearGradient id="my-cool-gradient" x2="1" y2="1">
+    <stop offset="10%" stop-color="#60A9FF" />  
+    <stop offset="90%" stop-color="#D187FF" />
+ <!--   <stop offset="100%" stop-color="#112266" /> -->
+  </linearGradient>
+</svg>
+	  
+	    
+<!-- Small Cube for Mobile  -->
+<!-- 
+<div class="d-block d-sm-none">
+  <div class="cube-wrapersm"> 							
+    <div class="cubesm"> 
+      <div class="side top" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side bottom" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side front" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(0px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>    
+      <div class="side back" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(0px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side cleft" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side cright" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+    </div>
+  </div>
+</div>	 
+--> 
+    
+<!-- Big Cube for Mobile -->
+<div id="green">
+<!-- <div class="d-block d-sm-none">	 -->
+  <div class="cube-wraperbg"> 							
+    <div class="cubebg"> 
+      <div class="side top" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side bottom" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>   
+      <div class="side front" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(0px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side back" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(0px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side cleft" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side cright" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+    </div>
+  </div> 
+<!-- </div> -->
+</div>
+
+<!-- Cube for Non-Mobile -->
+<!--
+<div class="d-none d-sm-block">	 
+  <div class="cube-wraper"> 							
+    <div class="cube"> 
+      <div class="side top" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side bottom" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>   
+      <div class="side front" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(0px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side back" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(0px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side cleft" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+      <div class="side cright" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)"></div>
+    </div>
+  </div>
+</div>
+-->
+	 
+	 
+<!-- For extra crazy blob  -->
+<!--
+<div class="content">
+<div class="scroll__stage"> 
+<div class="scroll__content"> 
+-->
+	 
+	 
+	  
+<!-- Rocket Logo Section -->  
+<header class="text-white" style="background: linear-gradient(180deg,#0a0c21,rgba(0,0,0) 90%); box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); padding-top: 5rem !important; padding-bottom: 5rem">
+  <div class="container px-4 text-center">
+    <div style="position:relative">
+      <div class="page8" style="height: 20rem"></div>
+	  <div style="position:absolute; top:0px; width:100%">
+        <div class="page18" style="height: 20rem"></div>   
+      </div>
+	  <div style="position:absolute; top:0px; width:100%">
+        <div class="page28" style="height: 20rem"></div>   
+      </div>
+	</div>
+  </div>		  
+</header>
+
+
+	  
+<!-- Mission section-->	
+<div class="container px-4 py-5">
+  <h2 class="reveal pb-2 border-bottom" style="font-size: 52px; background: -webkit-linear-gradient(55deg, #60A9FF 10%, #D187FF 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;">The Mission</h2>
+
+  <div class="reveal row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+    <div class="col d-flex flex-column align-items-start gap-2">
+      <h3 class="fw-bold">Help Us Get To Outer Space!</h3>
+      <p class="text-body-primary">Every dollar we make gets us one step closer to that giant leap.</p>
+      <p> Donate any amount now...and we'll send you some branded goodies in return.</p>
+      <div type="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="btn btn-primary btn-lg" style="background-image: linear-gradient(55deg, #0b5ed7 10%, #D187FF 90%)">Donate Now!</div>
+	  
+
+    </div>
+    
+    <div class="col">
+      <div class="row row-cols-1 row-cols-sm-2 g-4">	  
+        <div class="col d-flex align-items-start">
+          <svg class="text-primary text-body-primary flex-shrink-0 me-3" width="1.75em" height="1.75em" fill="url(#my-cool-gradient)"><use xlink:href="#balloon-heart"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4">Phase 1: Fundraise</h3>
+            <p>Sell Merch & NFT's<br>Host Events<br>Rinse and Repeat</p>
+          </div>
+        </div>
+	  
+        <div class="col d-flex align-items-start">
+          <svg class="text-primary text-body-primary flex-shrink-0 me-3" width="1.75em" height="1.75em"  fill="url(#my-cool-gradient)"><use xlink:href="#balloon-heart"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4">Phase 2: Invest</h3>
+            <p>Real Estate<br>Other<br>Etc.</p>
+          </div>
+        </div>
+	  
+        <div class="col d-flex align-items-start">
+          <svg class="text-primary text-body-primary flex-shrink-0 me-3" width="1.75em" height="1.75em" fill="url(#my-cool-gradient)"><use xlink:href="#balloon-heart"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4">Phase 3: Buy Tickets</h3>
+            <p>$250,000<br>$500,000<br>$1,000,000</p>
+          </div>
+        </div>
+	  
+	    <div class="col d-flex align-items-start">
+          <svg class="text-primary text-body-primary flex-shrink-0 me-3" width="1.75em" height="1.75em" fill="url(#my-cool-gradient)"><use xlink:href="#balloon-heart"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4">Phase 4: Fulfil Mission</h3>
+            <p>Take the ride<br>Die Happy</p>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+</div>	
+	
+
+	
+<!-- Astronaut section-->
+<section id="astro" style="background-color:black; color:white; box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); margin-bottom: 3rem; padding-top: 3rem !important">
+
+  <div class="container px-4">
+    <div class="row">
+      <div class="reveal">
+        <h2 class="pb-2 border-bottom" style="font-size: 52px; background: -webkit-linear-gradient(55deg, #60A9FF 10%, #D187FF 90%); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent">The Astronauts</h2>
+      </div>
+    </div>
+  </div>			
+			
+  <div class="container" style="margin-top:3rem">
+    <div class="reveal row row-cols-3 row-cols-sm-3 row-cols-md-3 g-3">
+	
+	
+<div class="col">
+		<div style="position:relative">
+          <div class="card h-100 shadow-sm" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(0px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)">
+		   <svg width="100%" height="150" style="padding-top: 1rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#robot"/></svg>
+		   <div class="card-body" style="text-align: center">
+             <p class="card-text">Three</p>
+             <div class="d-flex justify-content-between align-items-center">
+             </div>
+            </div>
+          </div>
+		  <div style="position:absolute; top:0px; width:100%">
+          <div class="card h-100 shadow-sm" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(0px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)">
+		   <svg width="100%" height="150" style="padding-top: 1rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#robot"/></svg>
+		   <div class="card-body" style="text-align: center">
+              <p class="card-text">Three</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+		  </div>
+		  <div style="position:absolute; top:0px; width:100%">
+		            <div class="card h-100 shadow-sm">
+					<svg width="100%" height="150" style="padding: 0.5rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#robo"/></svg>
+		   <div class="card-body" style="text-align: center">
+              <p class="card-text">The</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+		  </div>
+        </div>
+	  </div>	
+	
+	
+      <div class="col">
+		<div style="position:relative">
+          <div class="card h-100 shadow-sm" style="opacity: 1; transition: opacity .5s; transform: scale(0.8); filter: blur(70px); width: 100%; height: 100%; background-image: linear-gradient(132deg, #5ddcff, #3c67e3 43%, #4e00c2); animation: spin 4.5s linear infinite;">
+		    <svg width="100%" height="150" style="padding-top: 1rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#incognito"/></svg>
+		    <div class="card-body" style="text-align: center">
+              <p class="card-text">The</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+		  <div style="position:absolute; width:100%; top: -2%; height: 103%;">
+            <div class="card h-100 shadow-sm" style="border-radius: 8px; width: 104%; height: 100%; left:-2%; background-image: linear-gradient(132deg, #5ddcff, #3c67e3 43%, #4e00c2); animation: spin 4.5s linear infinite;">
+		      <svg width="100%" height="150" style="padding-top: 1rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#incognito"/></svg>
+		      <div class="card-body" style="text-align: center">
+                <p class="card-text">The</p>
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+              </div>
+            </div>
+		  </div>
+		  <div style="position:absolute; top:0px; width:100%">
+		    <div class="card h-100 shadow-sm">
+			  <svg style="padding-top: 0rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#incognit"/></svg>
+		      <div class="card-body" style="text-align: center">
+                <p class="card-text">Three</p>
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+              </div>
+            </div>
+		  </div>
+        </div>
+      </div>
+			
+		
+<div class="col">
+		<div style="position:relative">
+          <div class="card h-100 shadow-sm" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(0px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)">
+		   <svg width="100%" height="150" style="padding-top: 1rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#robot"/></svg>
+		   <div class="card-body" style="text-align: center">
+             <p class="card-text">Three</p>
+             <div class="d-flex justify-content-between align-items-center">
+             </div>
+            </div>
+          </div>
+		  <div style="position:absolute; top:0px; width:100%">
+          <div class="card h-100 shadow-sm" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(0px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)">
+		   <svg width="100%" height="150" style="padding-top: 1rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#robot"/></svg>
+		   <div class="card-body" style="text-align: center">
+              <p class="card-text">Three</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+		  </div>
+		  <div style="position:absolute; top:0px; width:100%">
+		            <div class="card h-100 shadow-sm">
+<svg width="100%" height="150" style="padding: 0.5rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#astrh"/></svg>
+		   <div class="card-body" style="text-align: center">
+              <p class="card-text">Amigos</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+		  </div>
+        </div>
+	  </div>      
+		
+<!--
+        <div class="col">
+		<div style="position:relative">
+          <div class="card h-100 shadow-sm" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(10px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)">
+		   <svg width="100%" height="150" style="padding-top: 1rem" class="bi text-info" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#robot"/></svg>
+		   <div class="card-body" style="text-align: center">
+              <p class="card-text">Three</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+		  		  <div style="position:absolute; top:0px; width:100%">
+          <div class="card h-100 shadow-sm" style="background-blend-mode: overlay,normal,normal,color-dodge,normal; filter: blur(5px) brightness(100%); background:radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)">
+		   <svg width="100%" height="150" style="padding-top: 1rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#robot"/></svg>
+		   <div class="card-body" style="text-align: center">
+              <p class="card-text">Three</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+		  </div>
+		  <div style="position:absolute; top:0px; width:100%">
+		            <div class="card h-100 shadow-sm">
+					<svg width="100%" height="150" style="padding: 0.5rem" class="bi text-primary" aria-label="Placeholder: Thumbnail" focusable="false"><use xlink:href="#astroh"/></svg>
+		   <div class="card-body" style="text-align: center">
+              <p class="card-text">Amigos</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+		  </div>
+        </div>
+	  </div>
+-->		  
+		  
+		  
+		  
+      </div>
+  </div>			
+	
+<!--  <div class="container px-4">
+    <div class="row">
+      <div class="reveal">
+        <h2 class="pb-2 border-bottom" style="padding-top: 4rem;">The Collection</h2>
+      </div>
+    </div>
+  </div> -->
+	
+	  
+</section>	
+    
+
+			  <div class="container px-4">
+    <div class="row">
+      <div class="reveal">
+        <h2 class="pb-2 border-bottom" style="padding-top:6rem; font-size: 52px; background: -webkit-linear-gradient(55deg, #60A9FF 10%, #D187FF 90%); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent">The Collectibles</h2>
+      </div>
+    </div>
+  </div>
+	
+<!-- Featurettes -->	
+	
+<main style="background: linear-gradient(180deg,#000000,rgba(12,14,31) 90%); box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5)">
+ <div class="container marketing" style="text-align: center">
+ 
+
+<div id="carouselExampleCaptions" class="carousel slide pointer-event" style="padding-top:3rem">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="reveal row featurette">
+      <div class="col-lg-7">
+        <h2 class="featurette-heading fw-normal lh-1">T-Shirts <span class="text-body-secondary" style="color:#0d6efd !important"></span></h2>
+        <p class="lead">Black / White ~ All Sizes Available</p>
+      </div>
+	    
+			<div class="col-lg-5">
+			<div style="position:relative; height:15rem">
+					
+						    <div class="scoverlay" style="position:absolute; top: 0px; height:15rem; width:100%"></div>
+     
+    </div>
+	</div>
+	</div>
+        </div>
+        <div class="carousel-item">
+    <div class="reveal row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Stickers & Magnets <span class="text-body-secondary" style="color:#0d6efd !important"></span></h2>
+        <p class="lead">3"x 3" ~ Custom Sizes Also Available</p>
+      </div>
+	    
+			<div class="col-md-5">
+			<div style="position:relative; height:15rem">
+					<div class="hoverlay" style="position:absolute; top: 0px; height:15rem; width:100%"></div>
+     
+    </div>
+	</div>
+	</div>
+        </div>
+        
+        
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+
+
+
+ 
+<!--
+    <div class="reveal row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">T-Shirts <span class="text-body-secondary" style="color:#0d6efd !important"></span></h2>
+        <p class="lead">Black / White ~ All Sizes Available</p>
+      </div>
+	    
+			<div class="col-md-5">
+			<div style="position:relative; height:15rem">
+						    <div class="scoverlay" style="position:absolute; top: 0px; height:15rem; width:100%"></div>
+     
+    </div>
+	</div>
+	</div>
+
+    <hr class="featurette-divider">
+
+    <div class="reveal row featurette">
+      <div class="col-md-7 order-md-2" style="text-align: right">
+        <h2 class="featurette-heading fw-normal lh-1">Stickers & Magnets <span class="text-body-secondary" style="color:#0d6efd !important"></span></h2>
+        <p class="lead">3"x 3" ~ Custom Sizes Also Available</p>
+      </div>
+ <div class="col-md-5">
+          				    <div style="position:relative; height:15rem">
+					    <div class="hoverlay" style="position:absolute; top: 0px; height:15rem; width:100%"></div>
+
+					    </div>
+	  </div>
+    </div>
+-->
+    <hr class="featurette-divider">
+
+	    
+<!-- NFT Collection -->
+    <div class="reveal album">
+      <h2 class="featurette-heading fw-normal lh-1">Our First NFT Collection</h2>
+      <p class="lead text-warning" style="padding-bottom:2rem"><b>Launching Soon!</b></p>
+		    
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+          <div class="card shadow-sm">
+              <img src="1.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+            
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
+                </div>
+                <small class="text-body-secondary">#001</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="2.jpg" class="card-img-top" alt="...">
+		   <div class="card-body">
+            
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
+                </div>
+                <small class="text-body-secondary">#002</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm" style="background-color: transparent; border-color: transparent">
+           <img src="3.png" class="card-img-top" alt="...">
+		   <div class="card-body">
+             
+              <div class="d-flex justify-content-between align-items-center">
+            <!--    <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
+                </div>
+                <small class="text-body-secondary">#003</small> -->
+				  <h2 class="featurette-heading fw-bold lh-1 txt anim-text-flow" style="text-align:center">Launching Soon!</h2>
+              </div>
+            </div> 
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="4.jpg" class="card-img-top" alt="...">
+		  <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
+                </div>
+                <small class="text-body-secondary">#004</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="5.jpg" class="card-img-top" alt="...">
+		  <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
+                </div>
+                <small class="text-body-secondary">#005</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="6.jpg" class="card-img-top" alt="...">
+		  <div class="card-body">
+             <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
+                </div>
+                <small class="text-body-secondary">#006</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="7.jpg" class="card-img-top" alt="...">
+		  <div class="card-body">
+         <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
+                </div>
+                <small class="text-body-secondary">#007</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="8.jpg" class="card-img-top" alt="...">
+		  <div class="card-body">
+             <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
+                </div>
+                <small class="text-body-secondary">#008</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="9.jpg" class="card-img-top" alt="...">
+		  <div class="card-body">
+        <!--      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            -->  <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
+                </div>
+                <small class="text-body-secondary">#009</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+    <hr class="featurette-divider">
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+<!-- FOOTER -->
+
+<footer class="container">
+ 	  <button class="dbutton">
+        <span class="default">Paper Airplane!</span>
+        <span class="success">Launched...</span>
+        <div class="left"></div>
+        <div class="right"></div>
+      </button> 
+ <!--    <p class="float-end" style="margin-bottom:0rem; padding-bottom:2rem"><a href="#">Back to top</a></p> -->
+   <p style="margin-bottom:0rem; padding-bottom:2rem"> </p> 
+ 
+
+  
+
+  </footer>
+
+  
+<!-- Eath Background -->  
+<!--  
+<div class="page2" style="background-color:black; box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); padding-top: 1rem !important; height: 20rem">
+  <div class="container px-4">
+    <div class="row gx-4">
+      <div class="col-lg-11"></div>
+    </div>
+  </div>
+</div>		
+-->
+	 
+</main>
+
+
+
+<!-- For extra crazy blob  -->	
+<!--
+</div> 
+</div> 
+</div> 
+-->
+
+
+	
+	
+<!-- Modal section-->
+<!-- Phase1 Modal -->
+<div class="modal fade px-3" id="P1M" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color:white">Fundraise</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="color:white">
+        <ul class="d-grid gap-4 my-5 list-unstyled small">
+          <li class="d-flex gap-4">
+            <svg class="bi text-body-secondary flex-shrink-0" width="48" height="48"><use xlink:href="#rocket"/></svg>
+            <div>
+              <h5 class="mb-0">Help Us Get To Outer Space!</h5>
+              Every dollar we make gets us one step closer to that giant leap.
+            </div>
+          </li>
+          <li class="d-flex gap-4">
+            <svg class="bi text-warning flex-shrink-0" width="48" height="48"><use xlink:href="#balloon-heart"/></svg>
+            <div>
+              <h5 class="mb-0">Donate any amount now</h5>
+              ...and we'll send you some branded goodies in return.
+            </div>
+          </li>
+          <li class="d-flex gap-4">
+            <svg class="bi text-primary flex-shrink-0" width="48" height="48"><use xlink:href="#qr-code-scan"/></svg>
+            <div>
+              <h5 class="mb-0">Then hold tight for our upcoming NFT release.</h5>
+              Complete with all-acess pass to our next big event! 
+            </div>
+          </li>
+        </ul>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary">Learn More</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Donate Now</button>
+      </div>
+    </div>
+  </div>
+</div>	  
+
+
+<!-- Donate Modal -->
+<div class="modal fade px-3" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">How Would You Like To Donate?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+   <!--     <div class="row row-cols-1 row-cols-md-2 g-4"> -->
+        <div class="row row-cols-2 g-4">
+  <div class="col">
+    <div class="card" style="align-items: center; border-width:0" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle2">
+      <img src="sbtcc.png" style="width:50%" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Bitcoin</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" style="align-items: center; border-width:0" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle3">
+      <img src="sethpc.png" style="width:50%" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Ethereum</h5>
+     </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" style="align-items: center; border-width:0" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle4">
+      <img src="svenc.png" style="width:50%" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Venmo</h5>
+    </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" style="align-items: center; border-width:0" type="button" data-bs-toggle="modal" data-bs-target="#">
+    
+	    <img src="smsqrc.png" style="width:50%" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Other</h5>
+      </div>
+    </div>
+  </div>		
+</div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#" data-bs-toggle="modal">Contact Us</button>
+	<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Ethereum</button>
+	<button class="btn btn-primary" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">Other</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- BTC Wallet Modal -->
+<div class="modal fade px-3" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">MoonShoot BTC Wallet</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card" style="align-items: center">
+  <img src="btcwall.png" style="width: 18rem; margin-top: 1rem" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">bc1q3gfckksy0d0mevup9ehruqceq fwlxh6wnt3uc5</p>
+  </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- ETH Wallet Modal -->
+<div class="modal fade px-3" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel3">MoonShoot ETH Wallet</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card" style="align-items: center">
+  <img src="ethwal.png" style="width: 18rem; margin-top: 1rem" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Only send ETH to this address.</p>
+  </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+	
+<!-- Venmo Wallet Modal -->
+<div class="modal fade px-3" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel4">MoonShoot Venmo Address</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	       <div class="card" style="align-items: center">
+  <img src="mswal.png" style="width: 18rem; margin-top: 1rem" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"></p>
+  </div>
+</div>
+	    </div>    
+      <div class="modal-footer">
+      <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
+      </div>
+    </div>
+  </div>
+</div>	
+	
+	
+
+
+
+<!-- Animated SVG/image boxes with scroll ...not working yet -->		
+<!--
+<section>
+			<div>
+				<h1>Contemplate</h1><br><h1>Transcendence</h1><br><br>
+			</div>
+			
+</section>
+<section>
+			<div class="content__bg content__bg--bottom" style="background-image:url(space1.png);">
+				<svg class="separator separator--up" width="100%" height="100%" viewBox="0 0 100 10" preserveAspectRatio="none">
+					<path class="separator__path path-anim" data-path-to="M 0 0 C 35 21 70 0 100 0 L 0 0 Z" vector-effect="non-scaling-stroke" d="M 0 0 C 37 0 70 0 100 0 L 0 0 Z" />
+				</svg>
+				<svg class="separator separator--down" width="100%" height="100%" viewBox="0 0 100 10" preserveAspectRatio="none">
+					<path class="separator__path path-anim" data-path-to="M 0 0 C 29 6 78 17 100 0 L 100 10 H 0 Z" vector-effect="non-scaling-stroke" d="M 0 0 C 18 1 61 9 100 0 L 100 10 H 0 Z" />
+				</svg>
+			</div>
+</section>
+<section>
+			<div>
+				<h1>Contemplate</h1><br><h1>Transcendence</h1><br><br>
+			</div>
+			
+</section>
+-->
+	
+<!-- For extra crazy blob  -->	
+<!--
+<script src="index.33763982.js"></script>
+-->
+
+
+<!-- For animated gradient text -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+  <script>
+  $('.txt').html(function(i, html) {
+  var chars = $.trim(html).split("");
+
+  return '<span>' + chars.join('</span><span>') + '</span>';
+});
+</script>
+	
+	
+ <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+       
+	   <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+		
+		<!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+	
+
+ 
+ <!-- For Paper Airplane Button -->	
+	<script src="dscript.js"></script>
+
+
+<!-- For Fade In Whille Scrolling -->		
+<script>
+	function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 1;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
+</script>
+
+
+<!-- For Original Robot/Cube Scrolling -->		
+<script>
+window.addEventListener(
+  "scroll",
+  () => {
+    document.body.style.setProperty(
+      "--scroll",
+      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+    );
+  },
+  false
+);
+</script>
+
+
+
+
+<!-- For Cube Scrolling -->		
+<script>
+
+gsap.set('#green', {xPercent:-50});
+      var rotate = gsap.timeline({
+        scrollTrigger: {
+          trigger: 'html',
+          scrub: 0.2,
+		  
+          start: 'top top',
+          end:'+=10000',
+        }
+      })
+	  .to('#green', {
+        rotation: 360 * 2,
+        duration: 1,
+        ease: 'none'
+      });
+</script>	
+		
+		
+		
+<!-- Animated SVG/image boxes with scroll ...not working yet -->			
+<!--	 
+<script>
+	
+
+const body = document.body;
+
+const preloader = _ => {
+    return new Promise(resolve => {
+
+        const imgwrap = document.createElement('div');
+        imgwrap.style.visibility = 'hidden';
+        body.appendChild(imgwrap);
+        
+        [...document.querySelectorAll('image')].forEach(el => {
+            const imgEl = document.createElement('img');
+            imgEl.style.width = 0;
+            imgEl.src = el.getAttribute('xlink:href');
+            imgEl.className = 'preload';
+            imgwrap.appendChild(imgEl);
+        });
+
+        const arrImg = [...document.querySelectorAll('.preload'), ...document.querySelectorAll('.content__bg')];
+        imagesLoaded(arrImg, {background: true}, _ => {
+            imgwrap.parentNode.removeChild(imgwrap);
+            body.classList.remove('loading');
+            resolve();
+        });
+
+    });
+};
+	// preload the images
+preloader();
+
+// All path elements in the page
+const paths = [...document.querySelectorAll('path.path-anim')];
+	
+// Smooth scrolling initialization (using Lenis https://github.com/studio-freight/lenis)
+const lenis = new Lenis({
+    lerp: 0.1,
+    smooth: true,
+});
+const scrollFn = () => {
+    lenis.raf();
+    requestAnimationFrame(scrollFn);
+};
+requestAnimationFrame(scrollFn);
+
+// Animate the d attribute (path initial ) to the value in data-path-to;
+// start when the top of its SVG reaches the bottom of the viewport and 
+// end when the bottom of its SVG reaches the top of the viewport 
+paths.forEach(el => {
+    const svgEl = el.closest('svg');
+    const pathTo = el.dataset.pathTo;
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: svgEl,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+        }
+    })
+    .to(el, {
+        ease: 'none',
+        attr: { d: pathTo }
+    });
+});
+
+
+</script>
+-->		
+		
+		
+		
+		
+  </body>
+</html>
