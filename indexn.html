@@ -326,7 +326,18 @@
 	background-color:white !important;
 	}
 	
-	
+/* For Glitch */	
+#gcontainer > * {
+position:relative;
+}
+
+.glitch {
+  filter: url(#filter);
+}
+
+.hide {
+  display: none;
+}	
 
 	
 	
@@ -823,8 +834,38 @@
 -->
     <hr class="featurette-divider">
 
+	 
+<div id="gcontainer" class="px-4 text-center">
+		 <h1 class="featurette-heading fw-normal lh-1">Our First NFT Collection</h1>
+      <h2 class="txt anim-text-flow">Launching Soon!</h2>
+  <svg width="100%" height="0">
+    <filter id="filter" x="0" y="0">
+        <feColorMatrix in="SourceGraphic" mode="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+        <feOffset in="r" result="r2" >
+<!--           <animate attributeName="dx" attributeType="XML" values="0;-5;0;-18;-2;-4;0;-3;0" dur="0.2s" repeatCount="indefinite"/> -->
+        </feOffset>
+        <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+        <feOffset in="g" result="g2" dy="1">
+<!--           <animate attributeName="dx" attributeType="XML" values="0;0;0;-3;0;8;0;-1;0" dur="0.15s" repeatCount="indefinite"/> -->
+        </feOffset>
+        <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+        <feOffset in="b" result="b2" dy="2">
+<!--           <animate attributeName="dx" attributeType="XML" values="0;3;-1;4;0;2;0;18;0" dur="0.35s" repeatCount="indefinite"/> -->
+        </feOffset>
+        <feBlend in="r2" in2="g2" mode="screen" result="blend" />
+        <feBlend in="blend" in2="b2" mode="screen" result="blend" />
+    </filter>
+  </svg>
+  
+  <!-- Image needs to come _after_ the SVG or the animation won't work in Safari -->
+  <img src="r1.png" style="height: 16rem">
+  <img src="r2.png" style="height: 16rem" class="hide">
+</div>		 
+	 
+	 
 	    
 <!-- NFT Collection -->
+	 <!--
     <div class="reveal album">
       <h2 class="featurette-heading fw-normal lh-1">Our First NFT Collection</h2>
       <p class="lead txt anim-text-flow" style="padding-bottom:2rem">Launching Soon!</p>
@@ -872,12 +913,12 @@
                   <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
                 </div>
                 <small class="text-body-secondary">#003</small> 
-				 <!--  <h2 class="featurette-heading fw-bold lh-1 txt anim-text-flow" style="text-align:center">Launching Soon!</h2> -->
-              </div>
+	      </div>
             </div> 
           </div>
         </div>
-
+-->
+<!--	 
         <div class="col">
           <div class="card shadow-sm">
            <img src="4.jpg" class="card-img-top" alt="...">
@@ -953,8 +994,7 @@
           <div class="card shadow-sm">
            <img src="9.jpg" class="card-img-top" alt="...">
 		  <div class="card-body">
-        <!--      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            -->  <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
                   <button type="button" class="btn btn-sm btn-outline-primary">Buy Now</button>
@@ -967,7 +1007,7 @@
         </div>
       </div>
     </div>
-
+-->
 
     <hr class="featurette-divider">
     <!-- /END THE FEATURETTES -->
@@ -1222,6 +1262,11 @@
 -->
 
 
+
+<!-- For Glitch -->
+  <script  src="gscript.js"></script>	
+	
+	
 <!-- For animated gradient text -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   
