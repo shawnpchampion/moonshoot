@@ -3,6 +3,7 @@
 ul li {
   position: absolute;
   height: 16rem;
+  top:0;
 }
 ul img {
   
