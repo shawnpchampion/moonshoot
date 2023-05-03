@@ -542,8 +542,7 @@ position:relative;
 	  
 <!-- Mission section-->	
 <div class="container px-4 py-5">
-	<model-viewer src="mech_drone_glb.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" autoplay> </model-viewer>
-
+	
   <h2 class="reveal pb-2 border-bottom" style="font-size: 52px; background: -webkit-linear-gradient(55deg, #60A9FF 10%, #D187FF 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;">The Mission</h2>
@@ -1074,18 +1073,23 @@ position:relative;
 
 <!-- FOOTER -->
 
-<footer class="container">
+ <footer class="container text-center">
+
+  <div class="row">
+    <div class="col align-self-start">
+	<model-viewer src="mech_drone_glb.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" autoplay> </model-viewer>
+    </div>
+    <div class="col align-self-end">
  	<button class="dbutton">
         <span class="default">Paper Airplane!</span>
         <span class="success">Launched...</span>
         <div class="left"></div>
         <div class="right"></div>
         </button> 
+    </div>
+  </div>
  <!--    <p class="float-end" style="margin-bottom:0rem; padding-bottom:2rem"><a href="#">Back to top</a></p> -->
    <p style="margin-bottom:0rem; padding-bottom:2rem"> </p> 
- 
-
-  
 
   </footer>
 
